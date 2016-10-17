@@ -2,9 +2,9 @@ import React from 'react';
 import Filter from './Filter';
 import UserTable from './UserTable';
 
-export default ({ users }) => (
+export default () => (
   <div>
     <Filter />
-    <UserTable users={users} />
+    <UserTable />
   </div>
 );

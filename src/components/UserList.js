@@ -1,10 +1,13 @@
 import React from 'react';
 import UserRow from './UserRow';
+import { store, filteredUsersSelector } from './state';
 
-export default ({ users }) => {
+// const users = Store.getState().users;
+
+export default () => {
   return (
     <tbody>
-      {users.map((user, index) => <UserRow user={user} key={index} />)}
+      {filteredUsersSelector(store.getState()).map((user, index) => <UserRow user={user} key={index} />)}
     </tbody>
   );
 };
