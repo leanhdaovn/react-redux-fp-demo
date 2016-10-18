@@ -1,12 +1,17 @@
 import React from 'react';
-import UserRow from './UserRow';
+import { connect } from 'react-redux';
 import UserList from './UserList';
 import { store, filteredUsersSelector } from './state';
 
-// const users = Store.getState().users;
-
-export default () => {
-  return (
-    <UserList users={filteredUsersSelector(store.getState())} />
-  );
+const mapStateToProps = (state) => {
+  return {
+    users: filteredUsersSelector(state)
+  };
 };
+
+const VisibleUserList = connect(
+  mapStateToProps,
+  null
+)(UserList);
+
+export default VisibleUserList;

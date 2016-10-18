@@ -1,15 +1,16 @@
 import React from 'react';
+import { connect } from 'react-redux';
 import Filter from './Filter';
-import { store } from './state';
 
-const changeFilter = (e) => {
-  console.log(e);
-  store.dispatch({
-    type: 'UPDATE_SEARCH_STRING',
-    searchString: e.target.value
-  });
-}
+const mapDispatchToProps = (dispatch) => {
+  return {
+    onChange: (e) => {dispatch({
+      type: 'UPDATE_SEARCH_STRING',
+      searchString: e.target.value
+    })}
+  };
+};
 
-export default () => (
-  <Filter onChange={changeFilter}/>
-);
+const FilterContainer = connect(null, mapDispatchToProps)(Filter);
+
+export default FilterContainer;
