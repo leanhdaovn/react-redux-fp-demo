@@ -1,10 +1,10 @@
 import React from 'react';
-import Filter from './Filter';
+import FilterContainer from './FilterContainer';
 import UserTable from './UserTable';
 
 export default () => (
   <div>
-    <Filter />
+    <FilterContainer />
     <UserTable />
   </div>
 );

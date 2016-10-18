@@ -1,5 +1,5 @@
 import React from 'react';
-import UserList from './UserList';
+import VisibleUserList from './VisibleUserList';
 
 export default () => (
   <table>
@@ -9,6 +9,6 @@ export default () => (
         <th>Age</th>
       </tr>
     </thead>
-    <UserList />
+    <VisibleUserList />
   </table>
 );

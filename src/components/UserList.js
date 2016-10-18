@@ -1,13 +1,19 @@
-import React from 'react';
+import React, { PropTypes } from 'react';
 import UserRow from './UserRow';
-import { store, filteredUsersSelector } from './state';
 
-// const users = Store.getState().users;
-
-export default () => {
+const UserList = ({ users }) => {
   return (
     <tbody>
-      {filteredUsersSelector(store.getState()).map((user, index) => <UserRow user={user} key={index} />)}
+      {users.map((user, index) => <UserRow user={user} key={index} />)}
     </tbody>
   );
 };
+
+UserList.propTypes = {
+  users: PropTypes.arrayOf(PropTypes.shape({
+    name: PropTypes.string.isRequired,
+    age: PropTypes.number.isRequired
+  }).isRequired).isRequired
+};
+
+export default UserList;
