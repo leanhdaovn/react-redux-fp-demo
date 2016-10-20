@@ -22,9 +22,13 @@ module.exports = {
         exclude: /(node_modules)/,
       },
       {
+        test: /\.s?css$/,
+        loaders: ['style', 'css']
+      },
+      {
         key: 'scss',
         test: /\.scss$/,
-        loaders: ["style", "css", "sass"]
+        loaders: ['sass']
       }
     ]
   }

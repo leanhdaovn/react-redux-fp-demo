@@ -1,9 +1,9 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import './app.scss';
-
 import { createStore } from 'redux';
 import reducers from './components/reducers';
+import './app.scss';
+import 'react-select/dist/react-select.css';
 
 const store = createStore(reducers);
 

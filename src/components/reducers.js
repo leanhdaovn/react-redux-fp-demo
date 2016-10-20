@@ -7,9 +7,19 @@ const initialUsers = [
   { name: 'Tan', age: 4 },
 ];
 
-const reducer = (state = {users: initialUsers, searchString: ''}, action) => {
+const initialState = {
+  users: initialUsers,
+  searchString: '',
+  suburbs: [],
+  suburbSearchString: ''
+};
+
+const reducer = (state = initialState, action) => {
   if (action.type === 'UPDATE_SEARCH_STRING') {
     return { ...state, searchString: action.searchString };
+  }
+  if (action.type === 'CHANGE_SUBURB') {
+    return { ...state, suburb: action.suburb };
   }
   return state;
 }
