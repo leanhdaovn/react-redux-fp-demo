@@ -1,6 +1,5 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import App from './components/App';
 import './app.scss';
 
 import { createStore } from 'redux';
@@ -10,9 +9,9 @@ const store = createStore(reducers);
 
 const render = () => {
   // eslint-disable-next-line
-  const ReloadedApp = require('./components/App.js').default;
+  const App = require('./components/App.js').default;
   ReactDOM.render(
-    <ReloadedApp store={store}/>,
+    <App store={store}/>,
     document.getElementById('root')
   );
 };
