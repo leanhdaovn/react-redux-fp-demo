@@ -1,13 +1,13 @@
 import React from 'react';
+import { createAction } from 'redux-actions';
 import { connect } from 'react-redux';
 import Filter from './Filter';
 
+const updateSearchString = createAction('UPDATE_SEARCH_STRING');
+
 const mapDispatchToProps = (dispatch) => {
   return {
-    onChange: (e) => {dispatch({
-      type: 'UPDATE_SEARCH_STRING',
-      searchString: e.target.value
-    })}
+    onChange: e => dispatch(updateSearchString(e.target.value))
   };
 };
 

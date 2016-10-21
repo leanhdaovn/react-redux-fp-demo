@@ -1,5 +1,6 @@
 import React from 'react';
 import { connect } from 'react-redux';
+import { createAction } from 'redux-actions';
 import Select from 'react-select';
 
 const filteredSuburbSelector = (state) => state.suburbs.filter(s => s.label.toLowerCase().indexOf(state.suburbSearchString) > -1);
@@ -41,12 +42,11 @@ const mapStateToProps = (state) => {
   };
 };
 
+const changeSuburb = createAction('CHANGE_SUBURB');
+
 const mapDispatchToProps = (dispatch) => {
   return {
-    onChange: (suburb) => {dispatch({
-      type: 'CHANGE_SUBURB',
-      suburb
-    })}
+    onChange: (suburb) => dispatch(changeSuburb(suburb))
   };
 };
 
