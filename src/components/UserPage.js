@@ -1,11 +1,11 @@
 import React from 'react';
-import FilterContainer from './FilterContainer';
+import UserFilter from './UserFilter';
 import UserTable from './UserTable';
-import SuburbSelect from './SuburbSelect';
+import SuburbSelect from './SuburbSelect/index.js';
 
 export default () => (
   <div>
-    <FilterContainer />
+    <UserFilter />
     <UserTable />
     <SuburbSelect />
   </div>

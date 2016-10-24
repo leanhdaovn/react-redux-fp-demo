@@ -1,7 +1,7 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import UserList from './UserList';
-import { store, filteredUsersSelector } from './state';
+import UserList from '../UserList';
+import { filteredUsersSelector } from './state';
 
 const mapStateToProps = (state) => {
   return {

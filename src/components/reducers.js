@@ -1,6 +1,5 @@
-import { compose } from 'redux';
+import { compose, combineReducers } from 'redux';
 import { handleAction } from 'redux-actions';
-import reduceReducers from 'reduce-reducers';
 
 const initialUsers = [
   { name: 'Dao', age: 26 },
@@ -10,27 +9,15 @@ const initialUsers = [
   { name: 'Tan', age: 4 },
 ];
 
-const initialState = {
-  users: initialUsers,
-  searchString: '',
-  suburbs: [],
-  suburbSearchString: ''
+export const usersReducer = (state = initialUsers, action) => {
+  return state;
 };
 
-const basicReducer = (state = initialState, action) => state;
+export const suburbsReducer = (state = [], action) => {
+  return state;
+};
 
-const changeSuburbReducer = handleAction('CHANGE_SUBURB', (state, action) => {
-  return { ...state, suburb: action.payload };
-});
-
-const updateSearchStringReducer = handleAction('UPDATE_SEARCH_STRING', (state, action) => {
-  return { ...state, searchString: action.payload };
-});
-
-const reducer = reduceReducers(
-  basicReducer,
-  changeSuburbReducer,
-  updateSearchStringReducer
-);
-
-export default reducer;
+export default {
+  usersReducer,
+  suburbsReducer
+};

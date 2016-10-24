@@ -1,9 +1,8 @@
 import React from 'react';
 import { createAction } from 'redux-actions';
 import { connect } from 'react-redux';
-import Filter from './Filter';
-
-const updateSearchString = createAction('UPDATE_SEARCH_STRING');
+import Filter from '../Filter';
+import { updateSearchString } from './state';
 
 const mapDispatchToProps = (dispatch) => {
   return {
@@ -11,6 +10,6 @@ const mapDispatchToProps = (dispatch) => {
   };
 };
 
-const FilterContainer = connect(null, mapDispatchToProps)(Filter);
+const UserFilter = connect(null, mapDispatchToProps)(Filter);
 
-export default FilterContainer;
+export default UserFilter;
