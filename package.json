@@ -18,9 +18,9 @@
     "eslint-plugin-mocha": "^4.3.0",
     "eslint-plugin-react": "^6.1.1",
     "node-sass": "^3.10.1",
+    "redux-devtools": "^3.3.1",
     "sass-loader": "^4.0.2",
     "style-loader": "^0.13.1",
-    "redux-devtools": "^3.3.1",
     "webpack": "^1.13.2",
     "webpack-dev-server": "^1.16.2"
   },
@@ -34,6 +34,7 @@
     "reduce-reducers": "^0.1.2",
     "redux": "^3.6.0",
     "redux-actions": "^0.12.0",
+    "redux-form": "^6.1.1",
     "webpack-dev-server": "^1.16.2"
   },
   "scripts": {
