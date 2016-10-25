@@ -8,18 +8,18 @@ import 'react-select/dist/react-select.css';
 const store = createStore(reducer, window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__());
 
 const render = () => {
-  // // eslint-disable-next-line
-  // const App = require('./components/App.js').default;
-  // ReactDOM.render(
-  //   <App store={store}/>,
-  //   document.getElementById('root')
-  // );
   // eslint-disable-next-line
-  const App = require('./components/ReduxForm/index.js').default;
+  const App = require('./components/App.js').default;
   ReactDOM.render(
     <App store={store}/>,
     document.getElementById('root')
   );
+  // // eslint-disable-next-line
+  // const App = require('./components/ReduxForm/index.js').default;
+  // ReactDOM.render(
+  //   <App store={store}/>,
+  //   document.getElementById('root')
+  // );
 };
 
 render();

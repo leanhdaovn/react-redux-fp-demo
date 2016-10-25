@@ -1,7 +1,7 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import Select from 'react-select';
-import { suburbSelector } from './state';
+import { suburbSelector, changeSuburb } from './state';
 
 const suburbs = [
     { value: 0, label: 'Ho Chi Minh' },
@@ -27,18 +27,14 @@ const loadOptions = (input, callback) => {
   }
 };
 
-const mapStateToProps = (state) => {
-  return {
-    value: suburbSelector(state),
-    loadOptions: loadOptions
-  };
-};
+const mapStateToProps = (state) => ({
+  value: suburbSelector(state),
+  loadOptions,
+});
 
-const mapDispatchToProps = (dispatch) => {
-  return {
-    onChange: (suburb) => dispatch(changeSuburb(suburb))
-  };
-};
+const mapDispatchToProps = (dispatch) => ({
+  onChange: (suburb) => dispatch(changeSuburb(suburb)),
+});
 
 const SuburbSelect = connect(
   mapStateToProps,

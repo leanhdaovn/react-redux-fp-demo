@@ -1,5 +1,5 @@
 import React from 'react';
-import VisibleUserList from './VisibleUserList/index.js';
+import VisibleUserList from './VisibleUserList';
 
 export default () => (
   <table>

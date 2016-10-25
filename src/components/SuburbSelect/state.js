@@ -3,24 +3,25 @@ import reduceReducers from 'reduce-reducers';
 
 export const suburbSelector = (state) => state.suburb ? state.suburb.value : null;
 
-const UPDATE_SEARCH_STRING = 'SuburbSelect/CHANGE_SUBURB'
-const CLEAR_SEARCH_STRING = 'SuburbSelect/CLEAR_SUBURB'
+const CHANGE_SUBURB = 'SuburbSelect/CHANGE_SUBURB';
+// const CLEAR_SEARCH_STRING = 'SuburbSelect/CLEAR_SUBURB'
 
-export const changeSuburb = createAction(UPDATE_SEARCH_STRING);
-export const clearSuburb = createAction(CLEAR_SEARCH_STRING);
+export const changeSuburb = createAction(CHANGE_SUBURB);
+// export const clearSuburbSearchString = createAction(CLEAR_SEARCH_STRING);
 
-const changeSuburbReducer = handleAction(changeSuburb, (state = '', action) => {
+export const changeSuburbReducer = handleAction(changeSuburb, (state, action) => {
+  console.log(state, action);
   return action && action.payload ? action.payload : state;
-}, '');
+}, null);
 
-const clearSuburbReducer = handleAction(clearSuburb, (state = '', action) => {
-  console.log(state);
-  return state;
-}, '');
+// const clearSuburbSearchStringReducer = handleAction(clearSuburbSearchString, (state = '', action) => {
+//   console.log(state);
+//   return state;
+// }, '');
 
-export const reducer = reduceReducers(
-  changeSuburbReducer,
-  clearSuburbReducer
-);
+// export const reducer = reduceReducers(
+//   changeSuburbSearchStringReducer,
+//   clearSuburbSearchStringReducer
+// );
 
-export default reducer;
+export default changeSuburbReducer;
