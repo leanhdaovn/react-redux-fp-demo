@@ -4,9 +4,8 @@ import { createStore } from 'redux';
 import reducer from './components/rootReducer';
 import './app.scss';
 import 'react-select/dist/react-select.css';
-import store from './components/ReduxForm/state';
 // import ContactPage from './ReduxForm';
-// const store = createStore(reducer, window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__());
+const store = createStore(reducer, window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__());
 
 const render = () => {
   // // eslint-disable-next-line
