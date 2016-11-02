@@ -12,7 +12,8 @@ const UserList = ({ users }) => {
 UserList.propTypes = {
   users: PropTypes.arrayOf(PropTypes.shape({
     name: PropTypes.string.isRequired,
-    age: PropTypes.number.isRequired
+    age: PropTypes.number.isRequired,
+    sex: PropTypes.string.isRequired,
   }).isRequired).isRequired
 };
 

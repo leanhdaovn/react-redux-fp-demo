@@ -1,11 +1,14 @@
 import { createAction, handleAction } from 'redux-actions';
 import reduceReducers from 'reduce-reducers';
+import get from 'lodash/fp/get';
 
 const UPDATE_SEARCH_STRING = 'UserFilter/UPDATE_SEARCH_STRING'
 const CLEAR_SEARCH_STRING = 'UserFilter/CLEAR_SEARCH_STRING'
 
 export const updateSearchString = createAction(UPDATE_SEARCH_STRING);
 export const clearSearchString = createAction(CLEAR_SEARCH_STRING);
+export const searchStringPath = 'userSearchString';
+export const searchStringSelector = get(searchStringPath);
 
 const updateSearchStringReducer = handleAction(updateSearchString, (state = '', action) => {
   const result = action && typeof action.payload !== 'undefined' ? action.payload : state;

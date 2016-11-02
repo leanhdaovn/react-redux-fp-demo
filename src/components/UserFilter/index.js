@@ -2,13 +2,17 @@ import React from 'react';
 import { createAction } from 'redux-actions';
 import { connect } from 'react-redux';
 import Filter from '../Filter';
-import { updateSearchString } from './state';
+import { updateSearchString, searchStringSelector } from './state';
 
-const mapDispatchToProps = (dispatch) => {
+const mapStateToProps = (state) => {
   return {
-    onChange: e => dispatch(updateSearchString(e.target.value))
+    value: searchStringSelector(state),
   };
 };
+
+const mapDispatchToProps = (dispatch) => ({
+  onChange: e => dispatch(updateSearchString(e.target.value))
+});
 
 const UserFilter = connect(null, mapDispatchToProps)(Filter);
 
